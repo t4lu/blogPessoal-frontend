@@ -1,0 +1,20 @@
+ul.redes-sociais{
+    list-style: none;
+    padding: 0;
+}
+
+ul.redes-sociais li {
+    display: inline;
+    margin: 0;
+    padding: 10px;
+}
+
+.iconeRedes{
+    font-size: 35pt;
+    color: blueviolet;
+    padding: 10px;
+}
+
+.iconeRedes:hover{
+    color: crimson;
+}

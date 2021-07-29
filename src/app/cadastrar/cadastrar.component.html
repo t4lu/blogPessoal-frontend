@@ -16,31 +16,37 @@
 
                     <div class="form-group"> <!--inicia formulario de cadastro -->
                         <label for="nome">Nome</label>
-                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Insira seu nome ou apelido">
+                        <input [(ngModel='usuario.nome')] class="form-control" type="text" name="nome" id="nome" placeholder="Insira seu nome ou apelido">
                         </div> <!-- fecha nome-->
+
+                        <div class="form-group"> <!--inicia formulario de cadastro -->
+                            <label for="usuario">Usuário</label>
+                            <input [(ngModel='usuario.usuario')] class="form-control" type="text" name="usuario" id="usuario" placeholder="Crie seu usuário">
+                            </div> <!-- fecha usuario-->
+
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input class="form-control" type="text" name="email" id="email" placeholder="Insira seu e-mail">
+                            <input [(ngModel='usuario.email')]class="form-control" type="text" name="email" id="email" placeholder="Insira seu e-mail">
                         </div> <!--fecha e-mail -->
 
                         <div class="form-group">
                             <label for="foto">Link da sua foto</label>
-                            <input class="form-control" type="text" name="foto" id="foto" placeholder="Insira sua foto de perfil usando um link">
+                            <input [(ngModel='usuario.foto')]class="form-control" type="text" name="foto" id="foto" placeholder="Insira sua foto de perfil usando um link">
                         </div> <!--fecha foto -->
 
                         <div class="form-group"> <!--inicia formulario de senha -->
                             <label for="senha">Senha</label>
-                            <input class="form-control" type="password" name="senha" id="senha" placeholder="Cadastre uma senha">
+                            <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Cadastre uma senha">
                         </div> <!-- fecha formulario de senha -->
 
                         <div class="form-group"> <!--inicia confirmação de senha -->
                             <label for="confirmSenha">Confirmar Senha</label>
-                            <input class="form-control" type="password" name="confirmSenha" id="confirmSenha" placeholder="Repita sua senha">
+                            <input [(ngModel='usuario.senha')] class="form-control" type="password" name="confirmSenha" id="confirmSenha" placeholder="Repita sua senha">
                         </div> <!-- fecha confirmaçao de senha -->
 
                         <div class="form-group"> <!--inicia tipo de usuario -->
                             <label for="tipo">Selecione um perfil:</label>
-                            <select class="form-control" name="tipo" id="tipo">
+                            <select class="form-control" name="tipo" id="tipo" (change)='tipoUsuario($event)'>
                                 <option>Clique para ver</option>
                                 <option value="normal">Normal</option>
                                 <option value="adm">Administração</option>
@@ -48,8 +54,8 @@
                         </div> <!-- fecha tipo de usuario -->
 
                         <div class="d-flex justify-content-center"> <!-- inicia botoes C/C-->
-                            <button type="submit" class="btn btn-danger mr-4" routerLink='/entrar'>Cancelar</button>
-                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                            <button type="submit" class="btn btn-danger mr-4" routerLink='/logar'>Cancelar</button>
+                            <button type="submit" class="btn btn-success" (click='cadastrar()') >Cadastrar</button>
                         </div>
                 
                     </div> <!--fecha TODO o formulario de cadastro -->

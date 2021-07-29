@@ -11,17 +11,17 @@
 
         <div class="form-group"> <!--inicia formulario de usuario -->
             <label for="usuario">Usuário</label>
-            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Entre com seu e-mail ou usuário">
+            <input [(ngModel)] = 'userLogin.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Entre com seu e-mail ou usuário">
 
         </div> <!--fecha formulario de usuario -->
 
         <div class="form-group"> <!--inicia formulario de senha -->
             <label for="senha">Senha</label>
-            <input class="form-control" type="password" name="senha" id="senha" placeholder="Entre com sua senha">
+            <input [(ngModel)] = 'userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Entre com sua senha">
         </div> <!-- fecha formulario de senha -->
 
             <div class="d-flex justify-content-center"> <!-- inicia posiçao do buttom -->
-                <button type="submit" class="btn btn-success">Entrar</button>
+                <button type="submit" class="btn btn-success" (click)= 'entrar()'>Entrar</button>
             </div> <!-- fecha posiçao do buttom -->
 
         <hr class="mt-5 mb-5">

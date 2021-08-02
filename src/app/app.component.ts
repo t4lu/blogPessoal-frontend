@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'Talucinada';
+  constructor(
+    public auth: AuthService
+  ){}
+
 }

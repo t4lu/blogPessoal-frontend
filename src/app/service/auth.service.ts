@@ -15,12 +15,12 @@ export class AuthService {
   ) { }
 
   entrar(userLogin: userLogin): Observable<userLogin>{ //garante que irá receber e aceitar somente os parametros do meu objeto.
-    return this.http.post <userLogin>('http://localhost:4200/usuario/entrar', userLogin)
+    return this.http.post <userLogin>('https://talucinada.herokuapp.com/usuario/logar', userLogin)
 
   }
 
   cadastrar(usuario:Usuario): Observable<Usuario>{
-    return this.http.post <Usuario>('http://localhost:4200/usuario/cadastrar', Usuario)
+    return this.http.post <Usuario>('https://talucinada.herokuapp.com/usuarios/cadastrar', Usuario)
   }
 
   logado (){

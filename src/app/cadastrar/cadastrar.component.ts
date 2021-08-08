@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { userLogin } from '../model/userLogin';
+
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -32,7 +34,7 @@ export class CadastrarComponent implements OnInit {
   }
 
   cadastrar(){
-    this.usuario.tipo= "o" //this.usuarioTipo
+    this.usuario.tipo= this.usuarioTipo
 
     if (this.usuario.senha != this.confirmarSenha){
 
